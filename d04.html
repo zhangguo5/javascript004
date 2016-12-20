@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery插件</title>
+	</head>
+
+	<body>
+		<button>按钮1</button>
+		<button>按钮2</button>
+		<input type="text" value="username" /><input type="text" value="password" />
+		<script src="js/jQuery1.11.3/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			;
+			(function(method) {
+				method(window, window.document, jQuery);
+			}(function(win, doc, $) {
+				console.log("这是一个私有的块级作用域，IIFE");
+
+				$.fn.yourPluginName = function(options) {
+
+				}
+			}));
+
+			;
+			(function(method) {
+				method(window, window.document, jQuery);
+			}(function(win, doc, $) {
+				console.log("这是一个私有的块级作用域，IIFE");
+
+				$.fn.myPlugin1 = function(options) {
+					this.css({ //this是一个jQuery对象
+						"color": "blue"
+					});
+				}
+			}));
+
+			$("button").myPlugin1();
+
+			;
+			(function(method) {
+				method(window, window.document, jQuery);
+			}(function(win, doc, $) {
+				console.log("这是一个私有的块级作用域，IIFE");
+
+				$.fn.extend({
+					myPlugin2: function(options) {
+						this.css({ //this是一个jQuery对象
+							"background": "lightgreen"
+						});
+					}
+				});
+			}));
+			$("button").myPlugin2();
+		</script>
+	</body>
+
+</html>

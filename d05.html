@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery插件</title>
+	</head>
+	<body>
+		<button>按钮1</button><br />
+		<button>按钮2</button><br />
+		<input type="text" value="username" /><br />
+		<input type="text" value="password" />
+		<script src="js/jQuery1.11.3/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/SuperPlus/jQuery.SuperPlus-1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("button").SuperPlus({
+				length: 100,
+				changeAfter:function(obj){
+					//如果长度超过300则变成100
+					if($(obj).width()>300){
+						$(obj).width(100);
+					}
+				}
+			});
+			
+			$("input").SuperPlus({
+				color: "red"
+			});
+		</script>
+	</body>
+</html>

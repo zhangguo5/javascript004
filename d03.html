@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>extend</title>
+	</head>
+	<body>
+		<button id="btn1">按钮1</button>
+		<button>按钮2</button>
+		<input type="text" value="username"/><input type="text" value="password"/>
+		<script src="js/jQuery1.11.3/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		   $.fn.bgColor=function(color){
+		   	    this.css("background",color);
+		   }
+		   
+		   jQuery.prototype.color=function(color){
+		   	this.css("color",color);
+		   }
+		   
+		   $("button,input").bgColor("lightGreen");
+		   $("button,input").color("red");
+		</script>
+	</body>
+</html>

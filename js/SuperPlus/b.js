@@ -1,0 +1,1 @@
+(function(n){n(window,window.document,jQuery)})(function(n,i,t){t.fn.SuperPlus=function(n){t.each(this,function(i,c){t("<span/>").html("+").css("cursor","pointer").click(function(){t(c).width(t(c).width()+n)}).insertAfter(c)})}});

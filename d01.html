@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>extend</title>
+	</head>
+
+	<body>
+		<script src="js/jQuery1.11.3/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$.extend({
+				log: function(message) {
+					console.log(message);
+				}
+			});
+
+			$.log("控制台日志");
+			
+			var x={a:1};
+			var y={a:2,b:3};
+			var z={b:4,c:5};
+			//使用第2个及后的对象扩展前面的对象，如果有则覆盖
+			$.extend(x,y,z);
+			$.log(x.a+","+x.b+","+x.c);
+			
+		</script>
+	</body>
+
+</html>
